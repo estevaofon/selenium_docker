@@ -18,6 +18,6 @@ elem.send_keys("pycon")
 elem.send_keys(Keys.RETURN)
 driver.save_screenshot("image.png")
 assert "No results found." not in driver.page_source
-assert "Estevao Rocks" in driver.page_source
+assert "Estevao Direto" in driver.page_source
 
 driver.close()
