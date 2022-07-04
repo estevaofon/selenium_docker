@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  selenium:
+    image: selenium/standalone-firefox
+    ports:
+    - 4444:4444
+    restart: always
+
+  app: 
+    build:
+      context: .
+    volumes:
+    - ./app:/app
+    command: sh -c "python3 script.py"
+    depends_on:
+      - selenium
